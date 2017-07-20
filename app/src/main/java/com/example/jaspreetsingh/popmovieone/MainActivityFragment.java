@@ -173,6 +173,7 @@ public class MainActivityFragment extends Fragment {
         protected void onPreExecute() {
             super.onPreExecute();
             progressDialog = ProgressDialog.show(getContext(),null, null, true,false);
+            //  loading dialog is not dismissible using the back key. need to correct
             progressDialog.setContentView(R.layout.spinning_wheel);
 
         }
@@ -197,7 +198,7 @@ public class MainActivityFragment extends Fragment {
 
                 //Please replace your API Key here!
                 Uri uri = Uri.parse(BASE_URL).buildUpon()
-                        .appendQueryParameter(TMDB_API_KEY, "Enter your key here")
+                        .appendQueryParameter(TMDB_API_KEY, "9dd80547a818657f388a0f64566defa7")
                         .build();
 
                 URL buildUrl = new URL(uri.toString());
